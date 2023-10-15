@@ -84,5 +84,5 @@ st.divider()
 
 st.write("# We are currently at ", "$", roundedFunds)
 st.write("# of our $", goal, " goal!")
-st.write("# That's ", round(percent), "% of the current goal!") # can be removed
+#st.write("# That's ", round(percent), "% of the current goal!") # can be removed
 
