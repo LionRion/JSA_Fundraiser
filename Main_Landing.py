@@ -53,7 +53,8 @@ else:
 
 st.divider()
 
-st.write("# Our funds are currently ", "$", roundedFunds, " out of our goal of ", "$", goal, "!")
+st.write("# Our funds are currently ", "$", roundedFunds)
+st.write("of our goal to ", "$", goal, "!")
 percent = roundedFunds/goal * 100
 st.write("# That's ", round(percent), "% of the current goal!")
 
