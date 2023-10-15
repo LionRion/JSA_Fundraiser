@@ -22,43 +22,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 roundedFunds = round(server_state.funds, 2)
 goal=0
-
-if roundedFunds < 75:
-    goal=75
-    my_bar = st.progress(0, text="Goal 1: Pie Sugath!")
-    my_bar.progress(roundedFunds / 75, text="Goal 1: Pie Sugath!")
-elif roundedFunds == 75:
-    goal=75
-    my_bar = st.progress(0, text="Goal 1: Pie Sugath!")
-    my_bar.progress(roundedFunds / 75, text="Goal 1: Pie Sugath!")
-    st.balloons()
-elif roundedFunds < 150:
-    goal=150
-    my_bar = st.progress(0, text="Goal 2: Pie Keegan!")
-    my_bar.progress(roundedFunds / 150, text="Goal 2: Pie Keegan!")
-elif roundedFunds == 150:
-    goal=150
-    my_bar = st.progress(0, text="Goal 1: Pie Keegan!")
-    my_bar.progress(roundedFunds / 150, text="Goal 2: Pie Keegan!")
-    st.balloons()
-elif roundedFunds < 225:
-    goal=225
-    my_bar = st.progress(0, text="Goal 3: Pie Soham!")
-    my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
-else:
-    goal=225
-    my_bar = st.progress(0, text="Goal 1: Pie Soham!")
-    my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
-    st.balloons()
-
-st.divider()
-
-st.write("# Our funds are currently ", "$", roundedFunds)
-st.write("of our goal to ", "$", goal, "!")
 percent = roundedFunds/goal * 100
-st.write("# That's ", round(percent), "% of the current goal!")
-
-st.divider()
 
 url = "https://www.streamlit.io"
 
@@ -77,4 +41,46 @@ elif roundedFunds<225:
 else:
     dist = 0
     st.write("# We have reached our final goal! [Please donate if you enjoyed!](%s)" % url)
+
+st.divider()
+
+if roundedFunds < 75:
+    title = st.title("Goal 1: Pie Sugath!")
+    goal=75
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 75)
+elif roundedFunds == 75:
+    title = st.title("Goal 1: Pie Sugath: :green[Complete!]")
+    goal=75
+    my_bar = st.progress(0,)
+    my_bar.progress(roundedFunds / 75)
+    st.balloons()
+elif roundedFunds < 150:
+    title = st.title("Goal 2: Pie Keegan!")
+    goal=150
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 150)
+elif roundedFunds == 150:
+    title = st.title("Goal 2: Pie Keegan: :green[Complete!]")
+    goal=150
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 150)
+    st.balloons()
+elif roundedFunds < 225:
+    title = st.title("Goal 3: Pie Soham: :green[Complete!]")
+    goal=225
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 225)
+else:
+    title = st.title("Goal 3: Pie Soham: :green[Complete!]")
+    goal=225
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 225)
+    st.balloons()
+
+st.divider()
+
+st.write("# We are currently at ", "$", roundedFunds)
+st.write("# of our $", goal, " goal!")
+st.write("# That's ", round(percent), "% of the current goal!") # can be removed
 
