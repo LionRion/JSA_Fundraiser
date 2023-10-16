@@ -41,16 +41,19 @@ st.sidebar.header("Admin Editor")
 # )
 
 if 'num' not in st.session_state:
-    st.session_state.num = float(0.00)
+    st.session_state.num = 0.00
+def submit():
+    st.session_state.num=float(st.session_state.widget)
+    st.session_state.widget=''
 
-st.session_state.num = st.number_input("Enter a value to increase the slider by:", step=0.01, value=st.session_state.num)
+st.text_input("Enter a value to increase the slider by:", max_chars=8, key='widget', on_change=submit)
 
 with (server_state_lock["funds"]):
     if "funds" not in server_state:
         server_state.funds = 0.01  # Initial value
     with no_rerun:
         server_state.funds += round(st.session_state.num, 2)
-        st.session_state.num = 0
+        st.session_state.num = 0.00
 
 with server_state_lock["funds"]:
     if "funds" not in server_state:
