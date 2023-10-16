@@ -45,19 +45,20 @@ if 'num' not in st.session_state:
 def submit():
     st.session_state.num=float(st.session_state.widget)
     st.session_state.widget=''
+    with (server_state_lock["funds"]):
+        if "funds" not in server_state:
+            server_state.funds = 0.00  # Initial value
+        with no_rerun:
+            server_state.funds += round(st.session_state.num, 2)
+            st.session_state.num = 0.00
 
 st.text_input("Enter a value to increase the slider by:", max_chars=8, key='widget', on_change=submit)
 
-with (server_state_lock["funds"]):
-    if "funds" not in server_state:
-        server_state.funds = 0.01  # Initial value
-    with no_rerun:
-        server_state.funds += round(st.session_state.num, 2)
-        st.session_state.num = 0.00
+
 
 with server_state_lock["funds"]:
     if "funds" not in server_state:
-        server_state.funds = 0.01  # Initial value
+        server_state.funds = 0.00  # Initial value
     with no_rerun:
         server_state.funds = round(st.slider(
             "Shared value", min_value=0.00, max_value=500.00, step=0.01, value=server_state.funds
