@@ -41,7 +41,7 @@ st.sidebar.header("Admin Editor")
 # )
 
 if 'num' not in st.session_state:
-    st.session_state.num = st.number_input("Enter a value to increase the slider by:", step=0.01, )
+    st.session_state.num = st.number_input("Enter a value to increase the slider by:", step=0.01, value=st.session_state.num)
 
 with (server_state_lock["funds"]):
     if "funds" not in server_state:
