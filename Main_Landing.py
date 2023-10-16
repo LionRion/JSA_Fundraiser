@@ -78,16 +78,16 @@ if percent==100 and roundedFunds<300:
     dist=0
     st.write("# We have :green[completed] the current goal! [Donate now to reveal the next goal!](%s)" % url)
 elif roundedFunds<75:
-    dist = round(75-roundedFunds)
+    dist = round(75-roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 elif roundedFunds<150:
-    dist = round(150 - roundedFunds)
+    dist = round(150 - roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 elif roundedFunds<225:
-    dist = round(225 - roundedFunds)
+    dist = round(225 - roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 elif roundedFunds<300:
-    dist = round(300 - roundedFunds)
+    dist = round(300 - roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 else:
     dist = 0
