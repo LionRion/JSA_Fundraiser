@@ -41,7 +41,7 @@ st.sidebar.header("Admin Editor")
 # )
 
 if 'num' not in st.session_state:
-    st.session_state.num = 0.00
+    st.session_state.num = float(0.00)
 
 st.session_state.num = st.number_input("Enter a value to increase the slider by:", step=0.01, value=st.session_state.num)
 
