@@ -33,9 +33,9 @@ elif roundedFunds < 225:
     goal=225
     my_bar = st.progress(0, text="Goal 3: Pie Soham!")
     my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
-else:
+elif roundedFunds ==225 :
     goal=225
-    my_bar = st.progress(0, text="Goal 1: Pie Soham!")
+    my_bar = st.progress(0, text="Goal 3: Pie Soham!")
     my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
     st.balloons()
 

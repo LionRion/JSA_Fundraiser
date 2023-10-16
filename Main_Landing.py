@@ -51,12 +51,22 @@ elif roundedFunds < 225:
     goal=225
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 225)
-else:
+elif roundedFunds==225:
     title = st.title("Goal 3: Pie Soham: :green[Complete!]")
     goal=225
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 225)
     st.balloons()
+elif roundedFunds < 300:
+    title = st.title("Goal 4: Pie Keegan Again!")
+    goal = 300
+    my_bar = st.progress(0)
+    my_bar.progress(roundedFunds / 300)
+else:
+    title = st.title("Goal 4: Pie Keegan Again: :green[Complete!]")
+    goal = 300
+    my_bar = st.progress(0)
+    my_bar.progress(1)
 
 percent = roundedFunds/goal * 100
 
@@ -64,7 +74,7 @@ url = "https://www.streamlit.io"
 
 st.divider()
 
-if percent==100 and roundedFunds<225:
+if percent==100 and roundedFunds<300:
     dist=0
     st.write("# We have :green[completed] the current goal! [Donate now to reveal the next goal!](%s)" % url)
 elif roundedFunds<75:
@@ -75,6 +85,9 @@ elif roundedFunds<150:
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 elif roundedFunds<225:
     dist = 225 - roundedFunds
+    st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
+elif roundedFunds<300:
+    dist = 300 - roundedFunds
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 else:
     dist = 0
