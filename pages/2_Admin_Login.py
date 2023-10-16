@@ -1,6 +1,8 @@
 import streamlit as st
 from streamlit_server_state import server_state, server_state_lock, no_rerun
 import hmac
+
+
 def check_password():
     """Returns `True` if the user had the correct password."""
 
@@ -28,27 +30,25 @@ def check_password():
 if not check_password():
     st.stop()  # Do not continue if check_password is not True.
 
-
-
-
 st.set_page_config(page_title="Admin Editor")
-
-
-
 
 st.markdown("# Admin Editor")
 st.sidebar.header("Admin Editor")
-#st.write(
+# st.write(
 #    """This demo shows how to use
-#[`st.pydeck_chart`](https://docs.streamlit.io/library/api-reference/charts/st.pydeck_chart)
-#to display geospatial data."""
-#)
+# [`st.pydeck_chart`](https://docs.streamlit.io/library/api-reference/charts/st.pydeck_chart)
+# to display geospatial data."""
+# )
+
+if 'num' not in st.session_state:
+    st.session_state.num = st.number_input("Enter a value to increase the slider by:", step=0.01, )
 
 with (server_state_lock["funds"]):
     if "funds" not in server_state:
         server_state.funds = 0.01  # Initial value
     with no_rerun:
-        server_state.funds += round(st.number_input("Enter a value to increase the slider by:", step=0.01), 2)
+        server_state.funds += round(st.session_state.num, 2)
+        st.session_state.num = 0
 
 with server_state_lock["funds"]:
     if "funds" not in server_state:
