@@ -25,23 +25,23 @@ goal=0
 
 
 if roundedFunds < 75:
-    title = st.title("Goal 1: Pie Sugath!")
+    title = st.title("Goal 1: Pie Keegan!")
     goal=75
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 75)
 elif roundedFunds == 75:
-    title = st.title("Goal 1: Pie Sugath: :green[Complete!]")
+    title = st.title("Goal 1: Pie Keegan: :green[Complete!]")
     goal=75
     my_bar = st.progress(0,)
     my_bar.progress(roundedFunds / 75)
     st.balloons()
 elif roundedFunds < 150:
-    title = st.title("Goal 2: Pie Keegan!")
+    title = st.title("Goal 2: Pie Sugath!")
     goal=150
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 150)
 elif roundedFunds == 150:
-    title = st.title("Goal 2: Pie Keegan: :green[Complete!]")
+    title = st.title("Goal 2: Pie Sugath: :green[Complete!]")
     goal=150
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 150)
