@@ -70,7 +70,7 @@ else:
 
 percent = roundedFunds/goal * 100
 
-url = "https://www.streamlit.io"
+url = "https://fundraise.jsa.org/give/517274/#!/donation/checkout"
 
 st.divider()
 
