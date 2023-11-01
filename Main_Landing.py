@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_server_state import server_state, server_state_lock
 
 st.set_page_config(
@@ -71,6 +72,9 @@ else:
 percent = roundedFunds/goal * 100
 
 url = "https://fundraise.jsa.org/give/517274/#!/donation/checkout"
+
+#components.iframe(url) #for when I can figure out how to get JSA website to accept new ports
+
 
 st.divider()
 
