@@ -1,12 +1,17 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_server_state import server_state, server_state_lock
+from streamlit_autorefresh import st_autorefresh
+
 
 st.set_page_config(
     page_title="Fundraiser Counter!",
     layout='wide',
     initial_sidebar_state="collapsed"
 )
+
+# update every 5 mins
+st_autorefresh(interval=5 * 60 * 1000)
 
 with server_state_lock["funds"]:  # Lock the "count" state for thread-safety
     if "funds" not in server_state:
