@@ -25,47 +25,36 @@ roundedFunds = round(server_state.funds, 2)
 goal=0
 
 
-if roundedFunds < 75:
-    title = st.title("Goal 1: Pie Keegan!")
-    goal=75
+if roundedFunds < 500:
+    title = st.title("Goal 1: Dye Keegan's and Shardul's hair!")
+    goal=500
     my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 75)
-elif roundedFunds == 75:
-    title = st.title("Goal 1: Pie Keegan: :green[Complete!]")
-    goal=75
+    my_bar.progress(roundedFunds / 500)
+elif roundedFunds == 500:
+    title = st.title("Goal 1: Dye Keegan's and Shardul's hair: :green[Complete!]")
+    goal=500
     my_bar = st.progress(0,)
     my_bar.progress(roundedFunds / 75)
     st.balloons()
-elif roundedFunds < 150:
-    title = st.title("Goal 2: Pie Sugath!")
-    goal=150
+elif roundedFunds < 750:
+    title = st.title("Goal 2: Dye Sugath's and Amrit's hair!")
+    goal=750
     my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 150)
-elif roundedFunds == 150:
-    title = st.title("Goal 2: Pie Sugath: :green[Complete!]")
-    goal=150
+    my_bar.progress(roundedFunds / 750)
+elif roundedFunds == 750:
+    title = st.title("Goal 2: Dye Sugath's and Amrit's hair: :green[Complete!]")
+    goal=750
     my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 150)
+    my_bar.progress(roundedFunds / 750)
     st.balloons()
-elif roundedFunds < 225:
-    title = st.title("Goal 3: Pie Soham: :green[Complete!]")
-    goal=225
+elif roundedFunds < 1000:
+    title = st.title("Goal 3: Dye Soham's and Jeff's hair!")
+    goal = 1000
     my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 225)
-elif roundedFunds==225:
-    title = st.title("Goal 3: Pie Soham: :green[Complete!]")
-    goal=225
-    my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 225)
-    st.balloons()
-elif roundedFunds < 300:
-    title = st.title("Goal 4: Pie Keegan Again!")
-    goal = 300
-    my_bar = st.progress(0)
-    my_bar.progress(roundedFunds / 300)
+    my_bar.progress(roundedFunds / 1000)
 else:
-    title = st.title("Goal 4: Pie Keegan Again: :green[Complete!]")
-    goal = 300
+    title = st.title("Goal 3: Dye Soham's and Jeff's hair: :green[Complete!]")
+    goal = 1000
     my_bar = st.progress(0)
     my_bar.progress(1)
 
@@ -78,20 +67,17 @@ url = "https://fundraise.jsa.org/give/517274/#!/donation/checkout"
 
 st.divider()
 
-if percent==100 and roundedFunds<300:
+if percent==100 and roundedFunds<1000:
     dist=0
     st.write("# We have :green[completed] the current goal! [Donate now to reveal the next goal!](%s)" % url)
-elif roundedFunds<75:
-    dist = round(75-roundedFunds, 2)
+elif roundedFunds<500:
+    dist = round(500-roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
-elif roundedFunds<150:
-    dist = round(150 - roundedFunds, 2)
+elif roundedFunds<750:
+    dist = round(750 - roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
-elif roundedFunds<225:
-    dist = round(225 - roundedFunds, 2)
-    st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
-elif roundedFunds<300:
-    dist = round(300 - roundedFunds, 2)
+elif roundedFunds<1000:
+    dist = round(1000 - roundedFunds, 2)
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 else:
     dist = 0
