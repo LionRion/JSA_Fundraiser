@@ -61,7 +61,7 @@ with server_state_lock["funds"]:
         server_state.funds = 0.00  # Initial value
     with no_rerun:
         server_state.funds = round(st.slider(
-            "Shared value", min_value=0.00, max_value=500.00, step=0.01, value=server_state.funds
+            "Shared value", min_value=0.00, max_value=1500.00, step=0.01, value=server_state.funds
         ), 2)
 
 st.write(server_state.funds)
