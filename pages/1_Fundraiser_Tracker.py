@@ -11,32 +11,32 @@ st.sidebar.header("Fundraiser Tracker")
 roundedFunds = round(server_state.funds, 2)
 goal=0
 
-if roundedFunds < 75:
-    goal=75
-    my_bar = st.progress(0, text="Goal 1: Pie Sugath!")
-    my_bar.progress(roundedFunds / 75, text="Goal 1: Pie Sugath!")
-elif roundedFunds == 75:
-    goal=75
-    my_bar = st.progress(0, text="Goal 1: Pie Sugath!")
-    my_bar.progress(roundedFunds / 75, text="Goal 1: Pie Sugath!")
+if roundedFunds < 500:
+    goal=500
+    my_bar = st.progress(0, text="Goal 1: Dye Keegan's and Shardul's hair!")
+    my_bar.progress(roundedFunds / 500, text="Goal 1: Dye Keegan's and Shardul's hair!")
+elif roundedFunds == 500:
+    goal=500
+    my_bar = st.progress(0, text="Goal 1: Dye Keegan's and Shardul's hair!")
+    my_bar.progress(roundedFunds / 75, text="Goal 1: Dye Keegan's and Shardul's hair!")
     st.balloons()
-elif roundedFunds < 150:
-    goal=150
-    my_bar = st.progress(0, text="Goal 2: Pie Keegan!")
-    my_bar.progress(roundedFunds / 150, text="Goal 2: Pie Keegan!")
-elif roundedFunds == 150:
-    goal=150
-    my_bar = st.progress(0, text="Goal 1: Pie Keegan!")
-    my_bar.progress(roundedFunds / 150, text="Goal 2: Pie Keegan!")
+elif roundedFunds < 750:
+    goal=750
+    my_bar = st.progress(0, text="Goal 2: Dye Sugath's and Amrit's hair!")
+    my_bar.progress(roundedFunds / 750, text="Goal 2: Dye Sugath's and Amrit's hair!")
+elif roundedFunds == 750:
+    goal=750
+    my_bar = st.progress(0, text="Goal 2: Dye Sugath's and Amrit's hair!")
+    my_bar.progress(roundedFunds / 750, text="Goal 2: Dye Sugath's and Amrit's hair!")
     st.balloons()
-elif roundedFunds < 225:
-    goal=225
-    my_bar = st.progress(0, text="Goal 3: Pie Soham!")
-    my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
-elif roundedFunds ==225 :
-    goal=225
-    my_bar = st.progress(0, text="Goal 3: Pie Soham!")
-    my_bar.progress(roundedFunds / 225, text="Goal 3: Pie Soham!")
+elif roundedFunds < 1000:
+    goal=1000
+    my_bar = st.progress(0, text="Goal 3: Dye Soham's and Jeff's hair!")
+    my_bar.progress(roundedFunds / 225, text="Goal 3: Dye Soham's and Jeff's hair!")
+elif roundedFunds == 1000:
+    goal=1000
+    my_bar = st.progress(0, text="Goal 3: Dye Soham's and Jeff's hair!")
+    my_bar.progress(roundedFunds / 1000, text="Goal 3: Dye Soham's and Jeff's hair!")
     st.balloons()
 
 st.divider()
@@ -49,16 +49,16 @@ st.divider()
 
 url = "https://www.streamlit.io"
 
-if percent==100 and roundedFunds<225:
+if percent==100 and roundedFunds<1000:
     dist=0
     st.write("# We have :green[completed] the current goal! [Donate now to reveal the next goal!](%s)" % url)
-elif roundedFunds<75:
+elif roundedFunds<500:
     dist = 75-roundedFunds
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
-elif roundedFunds<150:
+elif roundedFunds<750:
     dist = 150 - roundedFunds
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
-elif roundedFunds<225:
+elif roundedFunds<1000:
     dist = 225 - roundedFunds
     st.write("# We are $", dist, " away from our next goal! [Donate now!](%s)" % url)
 else:
