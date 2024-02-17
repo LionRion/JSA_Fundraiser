@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # update every 5 mins
-st_autorefresh(interval=5 * 60 * 1000)
+st_autorefresh(interval=5 * 1000)
 
 with server_state_lock["funds"]:  # Lock the "count" state for thread-safety
     if "funds" not in server_state:
