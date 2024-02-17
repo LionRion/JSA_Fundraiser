@@ -31,41 +31,41 @@ goal=0
 
 
 if roundedFunds < 500:
-    title = st.title("Goal 1: Dye Keegan's and Shardul's hair!")
+    title = st.title("Goal 1: Dye Aryav's, Keegan's, and Shardul's hair!")
     goal=500
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 500)
 elif roundedFunds == 500:
-    title = st.title("Goal 1: Dye Keegan's and Shardul's hair: :green[Complete!]")
+    title = st.title("Goal 1: Dye Aryav's, Keegan's, and Shardul's hair: :green[Complete!]")
     goal=500
     my_bar = st.progress(0,)
     my_bar.progress(roundedFunds / 75)
     st.balloons()
 elif roundedFunds < 750:
-    title = st.title("Goal 2: Dye Sugath's and Amrit's hair!")
+    title = st.title("Goal 2: Dye Andrew's, Sugath's, and Amrit's hair!")
     goal=750
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 750)
 elif roundedFunds == 750:
-    title = st.title("Goal 2: Dye Sugath's and Amrit's hair: :green[Complete!]")
+    title = st.title("Goal 2: Dye Andrew's, Sugath's, and Amrit's hair: :green[Complete!]")
     goal=750
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 750)
     st.balloons()
 elif roundedFunds < 1000:
-    title = st.title("Goal 3: Dye Soham's and Jeff's hair!")
+    title = st.title("Goal 3: Dye Arnav's, Soham's, and Jeff's hair!")
     goal = 1000
     my_bar = st.progress(0)
     my_bar.progress(roundedFunds / 1000)
 else:
-    title = st.title("Goal 3: Dye Soham's and Jeff's hair: :green[Complete!]")
+    title = st.title("Goal 3: Dye Arnav's, Soham's, and Jeff's hair: :green[Complete!]")
     goal = 1000
     my_bar = st.progress(0)
     my_bar.progress(1)
 
 percent = roundedFunds/goal * 100
 
-url = "https://fundraise.jsa.org/give/517274/#!/donation/checkout"
+url = "https://fundraise.jsa.org/give/563679/#!/donation/checkout"
 
 #components.iframe(url) #for when I can figure out how to get JSA website to accept new ports
 
@@ -88,9 +88,13 @@ else:
     dist = 0
     st.write("# We have reached our final goal! [Please donate if you enjoyed!](%s)" % url)
 
+st.write("MAKE SURE TO LEAVE A COMMENT SAYING HAIR DYE")
+
 st.divider()
+
+
 
 st.write("# We are currently at ", "$", roundedFunds)
 st.write("# of our $", goal, " goal!")
-#st.write("# That's ", round(percent), "% of the current goal!") # can be removed
+
 
